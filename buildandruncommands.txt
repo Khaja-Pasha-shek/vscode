@@ -1,0 +1,16 @@
+Build commands
+1->cmd at vscode folder location- yarn
+2->yarn watch to build
+
+Run App
+
+".\scripts\code.bat" (to run local app in development mode)
+"yarn run web" for web version
+
+Clean Build commands
+git clean -xfd
+yarn
+yarn watch
+
+Tests
+yarn test

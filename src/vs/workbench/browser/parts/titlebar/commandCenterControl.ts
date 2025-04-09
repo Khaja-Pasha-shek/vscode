@@ -187,7 +187,7 @@ class CommandCenterCenterViewItem extends BaseActionViewItem {
 								label = that._windowTitle.fileName ?? label;
 							}
 							if (!label) {
-								label = localize('label.dfl', "Search");
+								label = localize('label.dfl', "Search"); //command center search text is dislayed here
 							}
 							if (prefix) {
 								label = localize('label1', "{0} {1}", prefix, label);

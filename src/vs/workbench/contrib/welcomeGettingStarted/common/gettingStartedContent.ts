@@ -153,6 +153,17 @@ export const startEntries: GettingStartedStartEntryContent = [
 		}
 	},
 	{
+		id: 'topLevelOpenHamster',
+		title: localize('gettingStarted.topLevelOpenHamster.title', "Open Hamster..."),
+		description: localize('gettingStarted.topLevelOpenHamster.description', "Demo of Hamster"),
+		when: '!isWeb',
+		icon: Codicon.squirrel,
+		content: {
+			type: 'startEntry',
+			command: '',
+		}
+	},
+	{
 		id: 'topLevelOpenTunnel',
 		title: localize('gettingStarted.topLevelOpenTunnel.title', "Open Tunnel..."),
 		description: localize('gettingStarted.topLevelOpenTunnel.description', "Connect to a remote machine through a Tunnel"),
@@ -170,7 +181,8 @@ const Button = (title: string, href: string) => `[${title}](${href})`;
 export const walkthroughs: GettingStartedWalkthroughContent = [
 	{
 		id: 'Setup',
-		title: localize('gettingStarted.setup.title', "Get Started with VS Code"),
+		// title: localize('gettingStarted.setup.title', "Get Started with Your VS Code"),
+		title: localize('gettingStarted.setup.title', "Hi Jayasree, Welcome to VS Code"),
 		description: localize('gettingStarted.setup.description', "Customize your editor, learn the basics, and start coding"),
 		isFeatured: true,
 		icon: setupIcon,

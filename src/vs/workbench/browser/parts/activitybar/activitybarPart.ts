@@ -37,6 +37,7 @@ import { IViewDescriptorService, ViewContainerLocation, ViewContainerLocationToS
 import { IPaneCompositePartService } from 'vs/workbench/services/panecomposite/browser/panecomposite';
 import { IExtensionService } from 'vs/workbench/services/extensions/common/extensions';
 import { IWorkbenchEnvironmentService } from 'vs/workbench/services/environment/common/environmentService';
+import { ILogService } from 'vs/platform/log/common/log';
 
 export class ActivitybarPart extends Part {
 
@@ -210,6 +211,8 @@ export class ActivityBarCompositeBar extends PaneCompositeBar {
 		@IConfigurationService private readonly configurationService: IConfigurationService,
 		@IMenuService private readonly menuService: IMenuService,
 		@IWorkbenchLayoutService layoutService: IWorkbenchLayoutService,
+		@ILogService private readonly logService: ILogService
+
 	) {
 		super({
 			...options,
@@ -332,11 +335,14 @@ export class ActivityBarCompositeBar extends PaneCompositeBar {
 
 		// View Containers action bar
 		this.compositeBarContainer = super.create(this.element);
+		this.logService.info('Activity Bar Items:', this.getVisiblePaneCompositeIds());
 
 		// Global action bar
-		if (this.globalCompositeBar) {
-			this.globalCompositeBar.create(this.element);
-		}
+		//removes accounts and manage
+		// if (this.globalCompositeBar) {
+		// 	this.globalCompositeBar.create(this.element);
+		// 	this.logService.info('Global Activity Bar Items:', this.globalCompositeBar.getContextMenuActions().map(action => action.id));
+		// }
 
 		// Keyboard Navigation
 		this.registerKeyboardNavigationListeners();

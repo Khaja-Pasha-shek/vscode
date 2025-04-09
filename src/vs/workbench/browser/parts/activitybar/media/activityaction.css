@@ -4,8 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item {
-	display: block;
+	display: flex;
 	position: relative;
+	align-items: center;
+	justify-content: center;
 }
 
 .monaco-workbench .activitybar > .content .composite-bar > .monaco-action-bar .action-item::before,
@@ -19,6 +21,7 @@
 	transition-property: background-color;
 	transition-duration: 0ms;
 	transition-delay: 100ms;
+
 }
 
 .monaco-workbench .activitybar > .content.dragged-over .composite-bar > .monaco-action-bar .action-item::before,
@@ -39,6 +42,7 @@
 .monaco-workbench .activitybar > .content.dragged-over-head > .composite-bar > .monaco-action-bar .action-item:first-of-type::before,
 .monaco-workbench .activitybar > .content.dragged-over-tail > .composite-bar > .monaco-action-bar .action-item:last-of-type::after {
 	background-color: var(--insert-border-color);
+
 }
 
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-label {
@@ -46,9 +50,10 @@
 	z-index: 1;
 	display: flex;
 	overflow: hidden;
-	width: 48px;
-	height: 48px;
-	margin-right: 0;
+	/* border: 1px solid; */
+	/* border-color: aqua; */
+	width: 40px;
+	height: 40px;
 	box-sizing: border-box;
 
 }
@@ -65,11 +70,14 @@
 	justify-content: center;
 }
 
+
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.active .action-label.codicon,
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:focus .action-label.codicon,
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:hover .action-label.codicon {
 	color: var(--vscode-activityBar-foreground) !important;
 }
+
+
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.active .action-label.uri-icon,
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:focus .action-label.uri-icon,
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:hover .action-label.uri-icon {
@@ -89,7 +97,9 @@
 
 .monaco-workbench.hc-black .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.checked .active-item-indicator:before,
 .monaco-workbench.hc-black .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:focus .active-item-indicator:before {
-	border-color: var(--vscode-activityBar-activeBorder);
+	/* border-color: var(--vscode-activityBar-activeBorder); */
+	border-color: red;
+
 }
 
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.checked .active-item-indicator:before {
@@ -106,10 +116,12 @@
 
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.clicked:focus:before,
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.clicked:focus .active-item-indicator::before {
-	border-left: none !important; /* no focus feedback when using mouse */
+	border-left: none !important;
+
+	/* no focus feedback when using mouse */
 }
 
-.monaco-workbench .activitybar.left > .content :not(.monaco-menu) > .monaco-action-bar .action-item .active-item-indicator:before{
+.monaco-workbench .activitybar.left > .content :not(.monaco-menu) > .monaco-action-bar .action-item .active-item-indicator:before {
 	left: 0;
 }
 
@@ -174,6 +186,7 @@
 	top: 27px;
 	right: 6px;
 	background-color: var(--vscode-activityBar-background);
+
 }
 
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .profile-badge .profile-icon-overlay .codicon {
@@ -184,6 +197,7 @@
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:focus .profile-badge .profile-icon-overlay .codicon,
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item:hover .profile-badge .profile-icon-overlay .codicon {
 	color: var(--vscode-activityBar-foreground) !important;
+	/* color: red !important; */
 }
 
 .monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .profile-badge .profile-text-overlay {

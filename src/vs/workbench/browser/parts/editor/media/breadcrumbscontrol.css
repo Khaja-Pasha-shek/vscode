@@ -3,6 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
+/* Breadcrumbs folder icon css starts here*/
+
+
+.breadcrumbs-control .codicon-folder-opened {
+	margin-right: 2px;
+}
+
+/* folder color*/
+.breadcrumbs-control .folder .codicon-folder-opened {
+	color: #2E86C1;
+}
+
+.breadcrumbs-control .codicon-folder-opened:hover {
+	color: #005a9e;
+	/* Change color on hover */
+}
+
+/* Breadcrumbs folder icon css ends here*/
+
 .monaco-workbench .part.editor > .content .editor-group-container .breadcrumbs-control.hidden {
 	display: none;
 }
@@ -10,6 +29,9 @@
 .monaco-workbench .part.editor > .content .editor-group-container .breadcrumbs-control .monaco-breadcrumb-item.selected .monaco-icon-label,
 .monaco-workbench .part.editor > .content .editor-group-container .breadcrumbs-control .monaco-breadcrumb-item.focused .monaco-icon-label {
 	text-decoration-line: underline;
+	text-decoration-color: orange;
+	color: white;
+	/*change text color to blue  ex: c:/users/user/file.txt */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container .breadcrumbs-control .monaco-breadcrumb-item.selected .hint-more,
@@ -60,6 +82,6 @@
 	height: 100%;
 }
 
-.monaco-workbench .monaco-breadcrumbs-picker .highlighting-tree .monaco-highlighted-label .highlight{
+.monaco-workbench .monaco-breadcrumbs-picker .highlighting-tree .monaco-highlighted-label .highlight {
 	font-weight: bold;
 }

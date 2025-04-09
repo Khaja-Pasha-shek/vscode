@@ -101,6 +101,9 @@ class OutlineItem extends BreadcrumbsItem {
 
 }
 
+//Adds seperator '>' to filepath
+// const folderIcon = registerIcon('breadcrumbs-folder', Codicon.folder, localize('folderIcon', 'Icon for folders in the breadcrumbs.'));
+
 class FileItem extends BreadcrumbsItem {
 
 	private readonly _disposables = new DisposableStore();
@@ -134,11 +137,20 @@ class FileItem extends BreadcrumbsItem {
 		const label = this._labels.create(container, { hoverDelegate: this._hoverDelegate });
 		label.setFile(this.element.uri, {
 			hidePath: true,
-			hideIcon: this.element.kind === FileKind.FOLDER || !this.options.showFileIcons,
+			hideIcon: this.element.kind === FileKind.FILE || !this.options.showFileIcons,
+			//hideIcon: this.element.kind === FileKind.FOLDER || !this.options.showFileIcons,
 			fileKind: this.element.kind,
 			fileDecorations: { colors: this.options.showDecorationColors, badges: false },
 		});
 		container.classList.add(FileKind[this.element.kind].toLowerCase());
+
+		  // Add custom folder icon
+		  if (this.element.kind === FileKind.FOLDER) {
+			const iconElement = document.createElement('div');
+			iconElement.className =  'codicon codicon-attach'; // Use the class name of your registered icon
+			container.insertBefore(iconElement, container.firstChild);
+		}
+
 		this._disposables.add(label);
 	}
 }
@@ -151,7 +163,9 @@ export interface IBreadcrumbsControlOptions {
 	readonly widgetStyles?: IBreadcrumbsWidgetStyles;
 }
 
+//Adds seperator '>' to filepath
 const separatorIcon = registerIcon('breadcrumb-separator', Codicon.chevronRight, localize('separatorIcon', 'Icon for the separator in the breadcrumbs.'));
+
 
 export class BreadcrumbsControl {
 
@@ -327,7 +341,9 @@ export class BreadcrumbsControl {
 				showFileIcons: this._options.showFileIcons && showIcons,
 				showSymbolIcons: this._options.showSymbolIcons && showIcons
 			};
+
 			const items = model.getElements().map(element => element instanceof FileElement ? new FileItem(model, element, options, this._labels, this._hoverDelegate) : new OutlineItem(model, element, options));
+
 			if (items.length === 0) {
 				this._widget.setEnabled(false);
 				this._widget.setItems([new class extends BreadcrumbsItem {
