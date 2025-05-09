@@ -10,6 +10,7 @@ import { Codicon } from 'vs/base/common/codicons';
 import { ThemeIcon } from 'vs/base/common/themables';
 import { registerIcon } from 'vs/platform/theme/common/iconRegistry';
 import { NotebookSetting } from 'vs/workbench/contrib/notebook/common/notebookCommon';
+// import { isWeb } from 'vs/base/common/platform';
 
 
 const setupIcon = registerIcon('getting-started-setup', Codicon.zap, localize('getting-started-setup-icon', "Icon used for the setup category of welcome page"));
@@ -153,14 +154,25 @@ export const startEntries: GettingStartedStartEntryContent = [
 		}
 	},
 	{
-		id: 'topLevelOpenHamster',
-		title: localize('gettingStarted.topLevelOpenHamster.title', "Open Hamster..."),
-		description: localize('gettingStarted.topLevelOpenHamster.description', "Demo of Hamster"),
+		id: 'topLevelOpenGitHub',
+		title: localize('gettingStarted.topLevelOpeGitHub.title', "Open GitHub..."),
+		description: localize('gettingStarted.topLevelOpenGitHub.description', "Demo of GitHub"),
 		when: '!isWeb',
-		icon: Codicon.squirrel,
+		icon: Codicon.github,
 		content: {
 			type: 'startEntry',
-			command: '',
+			command: 'https://github.com/Khaja-Pasha-shek/Khaja-Pasha-shek',
+		}
+	},
+	{
+		id: 'topLevelOpenLinkedIn',
+		title: localize('gettingStarted.topLevelOpenLinkedIn.title', "Open LinkedIn..."),
+		description: localize('gettingStarted.topLevelOpenLinkedIn.description', "Visit my LinkedIn profile"),
+		when: '!isWeb',
+		icon: Codicon.account,
+		content: {
+			type: 'startEntry',
+			command: 'https://www.linkedin.com/in/khaja-pasha/',
 		}
 	},
 	{
@@ -182,7 +194,7 @@ export const walkthroughs: GettingStartedWalkthroughContent = [
 	{
 		id: 'Setup',
 		// title: localize('gettingStarted.setup.title', "Get Started with Your VS Code"),
-		title: localize('gettingStarted.setup.title', "Hi Jayasree, Welcome to VS Code"),
+		title: localize('gettingStarted.setup.title', "Hi Khaja Pasha, Welcome to your custom VS Code"),
 		description: localize('gettingStarted.setup.description', "Customize your editor, learn the basics, and start coding"),
 		isFeatured: true,
 		icon: setupIcon,
