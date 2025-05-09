@@ -1,6 +1,6 @@
 Build commands
-1->cmd at vscode folder location- yarn
-2->yarn watch to build
+1->cmd at vscode folder location-> yarn
+2->yarn watch ->to build
 
 Run App
 
